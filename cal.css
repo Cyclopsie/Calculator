@@ -2,77 +2,88 @@ body {
     background-color: purple;
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
-    flex-grow: 0;
+    flex: none;
     align-items: center;
     align-content: center;
+    
+
     
     
 }
 
 .title {
     margin-top: 0;
-    font-size: 500px;
+    padding-top: 10px;
+    font-size: 75px;
     text-align: center;
     color: greenyellow;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     font-weight: bold;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .clear {
-    font-size: 200px;
+    font-size: 75px;
 }
 
 .display{
     color: purple;
-    font-size: 300px;
+    font-size: 100px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    border: 10px;
+    border: 5px;
     border-style: solid;
-    border-width: 15px;
+    border-width: 5px;
     background-color: greenyellow;
-    margin: 30px;
+    margin: 5px;
     border-color: black;
     text-align: end;
     display: flex;
     justify-content: flex-end;
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 
 .calculator {
-    width: 1700px;
+    width: 500px;
     text-align: center;
     border-style: solid;
     border-color: black;
-    border-width: 20px;
+    border-width: 5px;
     background-color: purple;
-    padding: 100px;
+    padding: 25px;
+    padding-bottom: 3px;
+
     
 }
 
 
 
 button {
-    padding: 50px;
+    padding: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 20px;
+    margin: 2px;
     background-color: purple;
     border-color: yellowgreen;
-    border-width: 5px;
+    border-width: 3px;
     color: greenyellow;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 .equation{
-    font-size: 200px;
+    font-size: 80px;
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
 
 .num {
-    font-size: 300px;
+    font-size: 80px;
     background-color: purple;
     border-color: yellowgreen;
-    margin-bottom: 50px; 
+    margin-bottom: 10px; 
+}
+
+.equal {
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
