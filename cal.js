@@ -53,7 +53,7 @@ numPress.forEach((button) => {
         document.querySelector('.display').textContent = a;
         operatorPress.forEach((button) => {button.style.backgroundColor = "purple"});
         equalSign.style.backgroundColor = "purple";
-    }, ) 
+    }) 
 });
 
 ////operator pressed ////
