@@ -122,7 +122,7 @@ equalSign.addEventListener('click', () => {
         } else if (operatorArray[0] === "/") {
             if(storedNum[storedNum.length-1] === 0) {
                 equalSign.style.backgroundColor = "purple";
-                document.querySelector('.display').style.fontSize = "150px";
+                document.querySelector('.display').style.fontSize = "50px";
                 document.querySelector('.display').textContent = "ERROR: CAN'T DIVIDE BY 0";
                 
             } else {
@@ -144,7 +144,7 @@ equalSign.addEventListener('click', () => {
                 numberCheck(answer);
         } else if (operatorArray[operatorArray.length -2] === "/") {
             if(storedNum[storedNum.length-1] === 0) {
-                document.querySelector('.display').style.fontSize = "150px";
+                document.querySelector('.display').style.fontSize = "50px";
                 document.querySelector('.display').textContent = "ERROR: CAN'T DIVIDE BY 0";
             } else {
                 answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], divide);
