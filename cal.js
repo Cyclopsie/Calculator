@@ -53,7 +53,7 @@ numPress.forEach((button) => {
         document.querySelector('.display').textContent = a;
         operatorPress.forEach((button) => {button.style.backgroundColor = "purple"});
         equalSign.style.backgroundColor = "purple";
-    })
+    }, ) 
 });
 
 ////operator pressed ////
@@ -64,7 +64,7 @@ let operatorPress = document.querySelectorAll('.operator');
 
 operatorPress.forEach((button) => {
     button.addEventListener('click', () => {
-        button.style.backgroundColor = '#B08BBB';
+        equalSign.style.backgroundColor = "purple";
         operatorArray.push(button.innerHTML);
         storedNum.push(a);
         temporaryNum = [];
@@ -109,7 +109,6 @@ equalSign.addEventListener('click', () => {
     operatorArray.push(equalSign.innerHTML);
     storedNum.push(a);
     temporaryNum = [];
-    console.log(storedNum);
     if (storedNum.length === 2) {
          if(operatorArray[0] === "+") {
              answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], add);
@@ -122,7 +121,10 @@ equalSign.addEventListener('click', () => {
                 numberCheck(answer); 
         } else if (operatorArray[0] === "/") {
             if(storedNum[storedNum.length-1] === 0) {
+                equalSign.style.backgroundColor = "purple";
+                document.querySelector('.display').style.fontSize = "150px";
                 document.querySelector('.display').textContent = "ERROR: CAN'T DIVIDE BY 0";
+                
             } else {
                 answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], divide)
                     numberCheck(answer);
@@ -142,6 +144,7 @@ equalSign.addEventListener('click', () => {
                 numberCheck(answer);
         } else if (operatorArray[operatorArray.length -2] === "/") {
             if(storedNum[storedNum.length-1] === 0) {
+                document.querySelector('.display').style.fontSize = "150px";
                 document.querySelector('.display').textContent = "ERROR: CAN'T DIVIDE BY 0";
             } else {
                 answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], divide);

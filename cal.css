@@ -1,19 +1,27 @@
 body {
     background-color: purple;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    align-items: center;
+    align-content: center;
+    
     
 }
 
 .title {
+    margin-top: 0;
     font-size: 500px;
     text-align: center;
     color: greenyellow;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     font-weight: bold;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .clear {
-    font-size: 100px;
+    font-size: 200px;
 }
 
 .display{
@@ -33,15 +41,13 @@ body {
 }
 
 
-
 .calculator {
+    width: 1700px;
     text-align: center;
     border-style: solid;
     border-color: black;
     border-width: 20px;
     background-color: purple;
-    margin-left: 400px;
-    margin-right: 400px;
     padding: 100px;
     
 }
@@ -68,5 +74,5 @@ button {
     font-size: 300px;
     background-color: purple;
     border-color: yellowgreen;
-    margin-bottom: 50px;
+    margin-bottom: 50px; 
 }
