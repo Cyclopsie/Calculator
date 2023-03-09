@@ -40,7 +40,6 @@ function numberCheck(x){
     }
 }
 
-
 ////number pressed////
 let temporaryNum = [];
 let storedNum = [];
@@ -86,77 +85,77 @@ operatorPress.forEach((button) => {
                 answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], divide)
                     numberCheck(answer);
                 }
+                ////////this stores the answer and allows the use of the answer as the first # ///////////
+            } else if (operatorArray[operatorArray.length -2] === "=") {
+                numberCheck(answer);
             } else {
-                console.log(operatorArray);
+                document.querySelector('.display').textContent = operatorArray;
             } 
-            //document.querySelector('.display').textContent = operatorArray[operatorArray.length-1]; 
-            if (storedNum.length < 2) {
-                document.querySelector('.display').textContent = operatorArray[operatorArray.length-1];
-            } else {
-                document.querySelector('.display').textContent = operatorArray[operatorArray.length-1];
-                document.querySelector('.display').textContent = storedNum[storedNum.length-1];
-            }
-    })
+                document.querySelector('.display').textContent = operatorArray;
+                if (storedNum.length < 2) {
+                    document.querySelector('.display').textContent = operatorArray[operatorArray.length-1];
+                } else {
+                    document.querySelector('.display').textContent = operatorArray[operatorArray.length-1];
+                    document.querySelector('.display').textContent = storedNum[storedNum.length-1];
+                }
+        })
 });
 
+/////equal sign button/////////
 let equalSign = document.querySelector('.equal');
 
 equalSign.addEventListener('click', () => {
     equalSign.style.backgroundColor = '#B08BBB';
+    operatorArray.push(equalSign.innerHTML);
     storedNum.push(a);
     temporaryNum = [];
-    if (storedNum.length == 2) {
-        if(operatorArray[0] === "+") {
-            console.log(storedNum);
-            answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], add);
-            storedNum = [];
-            operatorArray = [];
-            
+    console.log(storedNum);
+    if (storedNum.length === 2) {
+         if(operatorArray[0] === "+") {
+             answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], add);
                 numberCheck(answer);
-                document.querySelector('.display').textContent = storedNums
-                console.log(storedNum);
         } else if (operatorArray[0] === "-") {
             answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], subtract)
-                numberCheck(answer);
+                numberCheck(answer); 
         } else if (operatorArray[0] === "*") {
             answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], multiply)
-                numberCheck(answer);
+                numberCheck(answer); 
         } else if (operatorArray[0] === "/") {
             if(storedNum[storedNum.length-1] === 0) {
                 document.querySelector('.display').textContent = "ERROR: CAN'T DIVIDE BY 0";
-                storedNum = [];
             } else {
                 answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], divide)
-                numberCheck(answer);
+                    numberCheck(answer);
             }
-        } 
+        } else {
+            document.querySelector('.display').textContent = operatorArray;
+        }
     } else if(storedNum.length > 2) {
-        if(operatorArray[operatorArray.length -1] === "+") {
+        if(operatorArray[operatorArray.length -2] === "+") {
             answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], add);
-            storedNum = [];
                 numberCheck(answer);
-        } else if (operatorArray[operatorArray.length -1] === "-") {
-            answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], subtract)
+        } else if (operatorArray[operatorArray.length -2] === "-") {
+            answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], subtract);
                 numberCheck(answer);
-        } else if (operatorArray[operatorArray.length -1] === "*") {
-            answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], multiply)
+        } else if (operatorArray[operatorArray.length -2] === "*") {
+            answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], multiply);
                 numberCheck(answer);
-        } else if (operatorArray[operatorArray.length -1] === "/") {
+        } else if (operatorArray[operatorArray.length -2] === "/") {
             if(storedNum[storedNum.length-1] === 0) {
                 document.querySelector('.display').textContent = "ERROR: CAN'T DIVIDE BY 0";
             } else {
-                answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], divide)
+                answer = operate(storedNum[storedNum.length-2], storedNum[storedNum.length-1], divide);
                 numberCheck(answer);
             }
         } else {
-            document.querySelector('.display').textContent = storedNum[storedNum.length-1];
-        } 
+            document.querySelector('.display').textContent = storedNum;
+         } 
     }
 });
 
 
 
-
+//////clear button//////
 let reloadPage = document.querySelector('.clear').addEventListener('click', () => {
     window.location.reload();
 });
