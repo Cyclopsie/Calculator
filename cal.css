@@ -58,15 +58,14 @@ button {
     color: greenyellow;
 }
 
-.operator,
-.equalsign {
-    font-size: 100px;
+.equation{
+    font-size: 200px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 .num {
-    font-size: 200px;
+    font-size: 300px;
     background-color: purple;
     border-color: yellowgreen;
     margin-bottom: 50px;
